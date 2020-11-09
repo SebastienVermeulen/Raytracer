@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Framework Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Game Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Framework Files\Math">
+      <UniqueIdentifier>{7f755a31-6edb-43e5-bf21-53ec2f30b687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework Files\Rendering">
+      <UniqueIdentifier>{8a5e129f-e827-40da-98d3-549676afc7aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework Files\Rendering\Rays">
+      <UniqueIdentifier>{46b04307-3bca-421e-bead-7f39ffac6ba8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Files\Rendering">
+      <UniqueIdentifier>{d6034a54-ce52-4052-837f-bc54b3681d41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework Files\Rendering\Camera">
+      <UniqueIdentifier>{fb5e12c7-f5bb-4d21-922a-4148aeec1730}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework Files\Injection">
+      <UniqueIdentifier>{cf961440-0e7d-43d7-aec3-a1a65512c52c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework Files\Rendering\Objects">
+      <UniqueIdentifier>{22f94c31-b880-4b74-82c7-871119aea873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework Files\Rendering\Scene">
+      <UniqueIdentifier>{c711c24e-8972-48de-820e-d7f44fa1dec4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework Files\Rendering\Materials">
+      <UniqueIdentifier>{66845808-b5ff-47d3-8b75-3a302348cdd8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Game Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Game Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray.cpp">
+      <Filter>Framework Files\Rendering\Rays</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Game Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Framework Files\Rendering\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="DependencyInjector.cpp">
+      <Filter>Framework Files\Injection</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Framework Files\Rendering\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Framework Files\Rendering\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphere.cpp">
+      <Filter>Framework Files\Rendering\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderable.cpp">
+      <Filter>Framework Files\Rendering\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Framework Files\Rendering\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="LambertDiffuse.cpp">
+      <Filter>Framework Files\Rendering\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="Metal.cpp">
+      <Filter>Framework Files\Rendering\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="Dielectric.cpp">
+      <Filter>Framework Files\Rendering\Materials</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Game Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3.h">
+      <Filter>Framework Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Framework Files\Rendering\Rays</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Game Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Framework Files\Rendering\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="vec2.h">
+      <Filter>Framework Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MathLib.h">
+      <Filter>Framework Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="DependencyInjector.h">
+      <Filter>Framework Files\Injection</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Framework Files\Rendering\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Framework Files\Rendering\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>Framework Files\Rendering\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderable.h">
+      <Filter>Framework Files\Rendering\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Framework Files\Rendering\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="LambertDiffuse.h">
+      <Filter>Framework Files\Rendering\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="Metal.h">
+      <Filter>Framework Files\Rendering\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="Dielectric.h">
+      <Filter>Framework Files\Rendering\Materials</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
