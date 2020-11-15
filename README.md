@@ -10,6 +10,9 @@ Do not that there is a .dll in all the release and debug folders,
 this file the "SDL2.dll" is crusial if you want the program to run.
 In other words make sure to not delete it.
 
+ISSUES:
+The renderer can potentially freeze due to it only using 1 thread. Will be fixed in next push.
+
 Doc:
 Raytracer in a weekend: https://raytracing.github.io/books/RayTracingInOneWeekend.html
 Dependencies: https://www.libsdl.org/
