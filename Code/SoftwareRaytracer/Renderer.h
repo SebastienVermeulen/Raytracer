@@ -4,6 +4,7 @@
 class vec3;
 class Camera;
 class Scene;
+class Window;
 
 class Renderer final
 {
@@ -18,16 +19,19 @@ public:
 
 	void RenderLoop();
 
-	void WriteColor(std::ostream& out, vec3& color) const;
+	void WriteColor(const int x, const int y, vec3& color) const;
 	
-	inline vec2 GetTargetSize() const 
+	inline void SetWindow(Window* pWindow)
 	{
-		return vec2((float)m_ImageWidth, (float)m_ImageHeight);
+		m_pWindow = pWindow;
+	}
+
+	inline Window* GetWindow() const 
+	{
+		return m_pWindow;
 	}
 
 private:
+	Window* m_pWindow;
 	Camera* m_pCamera;
-
-	int m_ImageWidth;
-	int m_ImageHeight;
 };

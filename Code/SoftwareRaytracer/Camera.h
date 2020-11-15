@@ -5,16 +5,10 @@ class Scene;
 class Camera 
 {
 public:
-	Camera();
-	Camera(const vec3& origin, const float aspectRatio, const float FOV, const float focalLength, 
-		const float renderDist, const float focusDist, const float aperture, const int samplesPerPixel,
-		const int maxBounces);
-	Camera(const vec3& origin, const vec3& lookAt, const bool isLookAtDir, const float aspectRatio,
-		const float FOV, const float focalLength, const float renderDist, const int samplesPerPixel, 
-		const int maxBounces);
-	Camera(const vec3& origin, const vec3& lookAt, const bool isLookAtDir, const float aspectRatio, 
-		const float FOV, const float focalLength, const float renderDist, const float focusDist,
-		const float aperture, const int samplesPerPixel, const int maxBounces);
+	Camera(const vec3& origin = {0.f, 0.f, 0.f}, const vec3& lookAt = { 0.f, 0.f, 0.f }, const bool isLookAtDir = false,
+		const float aspectRatio = 5.f / 3.f, const float FOV = 90.f, const float focalLength = 1.f,
+		const float renderDist = 1000.f, const float focusDist = 1.f, const float aperture = 1.f, 
+		const int samplesPerPixel = 5, const int maxBounces = 5);
 	~Camera() = default;
 
 	Camera(Camera& other) = delete;
@@ -45,12 +39,64 @@ public:
 	{
 		return *m_ActiveScene;
 	}
+
+	void SetOriginLookAt(const vec3& origin, const vec3& lookAt, const bool isLookAtDir);
+	inline void SetAspectRatio(const float aspectRatio)
+	{
+		m_AspectRatio = aspectRatio;
+
+		CalcViewSizes();
+	}
+	inline void SetFOV(const float FOV) 
+	{
+		m_FOV = FOV;
+
+		CalcViewSizes();
+	}
+	inline void SetFocalLength(const float focalLength)
+	{
+		m_FocalLength = focalLength;
+
+		CalculateViewDirections();
+		CalcViewSizes();
+	}
 	inline void SetActiveScene(Scene* scene) 
 	{
 		m_ActiveScene = scene;
 	}
+	inline void SetRenderDist(const float renderDist) 
+	{
+		m_RenderDist = renderDist;
+	}
+	inline void SetFocusDist(const float focusDist)
+	{
+		m_FocusDist = focusDist;
+
+		CalculateViewDirections();
+	}
+	inline void SetAperture(const float aperture)
+	{
+		m_Aperture = aperture;
+
+		CalculateViewDirections();
+	}
+	inline void SetSamplesPerPixel(const int samplesPerPixel)
+	{
+		m_SamplesPerPixel = samplesPerPixel;
+	}
+	inline void SetMaxBounces(const int maxBounces)
+	{
+		m_MaxBounces = maxBounces;
+	}
+	inline void SetDOF(const bool DOF) 
+	{
+		m_DOF = DOF;
+	}
 
 private:
+	void CalculateViewDirections();
+	void CalcViewSizes();
+
 	Scene* m_ActiveScene;
 
 	//Camera look directions
@@ -63,24 +109,25 @@ private:
 	vec3 m_Vertical;
 
 	//Ratio between the width and the height of the screen
-	const float m_AspectRatio;
+	float m_AspectRatio;
 	//The angle that the width of the screen tracks, field of view
-	const float m_FOV;
+	float m_FOV;
 	//Distance from the camera point to the "screen"
-	const float m_FocalLength;
+	float m_FocalLength;
 	//Screen sizes
-	const float m_ViewWidth;
-	const float m_ViewHeight;
+	float m_ViewWidth;
+	float m_ViewHeight;
 
 	//Render/world settings
-	const float m_RenderDist;
+	float m_RenderDist;
 	float m_LensRadius;
-	const float m_FocusDist;
-	const float m_Aperture;
+	float m_FocusDist;
+	float m_Aperture;
 
 	//Per pixel settings
-	const int m_SamplesPerPixel;
-	const int m_MaxBounces;
+	int m_SamplesPerPixel;
+	int m_MaxBounces;
 
-	const bool m_DOF;
+	bool m_IsLookAtDir;
+	bool m_DOF;
 };

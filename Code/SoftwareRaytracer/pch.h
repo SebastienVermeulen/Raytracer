@@ -5,6 +5,8 @@
 #include <iostream>
 #include <time.h> 
 #include <chrono>
+#include <SDL.h>
+#undef main
 
 #include "MathLib.h"
 //Materials

@@ -84,6 +84,9 @@
     <ClCompile Include="Dielectric.cpp">
       <Filter>Framework Files\Rendering\Materials</Filter>
     </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Game Files\Rendering</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -133,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="Dielectric.h">
       <Filter>Framework Files\Rendering\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Game Files\Rendering</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

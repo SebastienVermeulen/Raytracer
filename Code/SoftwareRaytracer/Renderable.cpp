@@ -8,8 +8,5 @@ Renderable::Renderable(Material* pMaterial)
 Renderable::~Renderable() 
 {
 	//A material could be shared over multiple objects
-	if (m_pMaterial)
-	{
-		delete m_pMaterial;
-	}
+	m_pMaterial = nullptr;
 }

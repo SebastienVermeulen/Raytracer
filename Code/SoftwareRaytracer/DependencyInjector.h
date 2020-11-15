@@ -1,6 +1,7 @@
 #pragma once
-class Camera;
 class Renderer;
+class Window;
+class Camera;
 
 class DependencyInjector 
 {
@@ -21,7 +22,9 @@ public:
 	DependencyInjector& operator=(DependencyInjector&& other) = delete;
 
 	Renderer* InjectRenderer();
+	Window* InjectWindow(const int width, const int height);
 	Camera* InjectCamera();
+	
 	void SetCamera(Camera* pCam);
 
 protected:
@@ -29,5 +32,6 @@ protected:
 	static DependencyInjector* m_pInstance;
 
 private:
+	Window* m_pWindow = nullptr;
 	Camera* m_pCamera = nullptr;
 };
